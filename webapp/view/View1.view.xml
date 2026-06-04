@@ -1,0 +1,324 @@
+<mvc:View controllerName="com.demo.demoempmanagement.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <!-- <Text id="welcomeTxt" text="Welcome to SAPUI5" width="100%" textAlign="Center" class="sapMH1FontSize"/>
+            
+            <Label text="Enter your name" class="sapUiTinyMarginBegin sapUiTinyMarginTop"></Label>
+            <Input id="nameIpt" placeholder="Name" width="35%" class="sapUiTinyMarginBegin" />
+
+            <Label text="Enter alignment" class="sapUiTinyMarginBegin sapUiTinyMarginTop"></Label>
+            <Input id="alignIpt" placeholder="Alignment" width="35%" class="sapUiTinyMarginBegin" />
+
+            <Button id="submitBtn" text="Submit" press="onSubmitPress" type="Emphasized" class="sapUiTinyMarginBegin"/>
+
+
+            <Label text="Enter Traffic Signal Color" class="sapUiTinyMarginBegin sapUiTinyMarginTop"></Label>
+            <Input id="colorIpt" placeholder="Traffic Signal Color" width="30%" class="sapUiTinyMarginBegin" change="onSignalChange" />
+            <Button id="signalBtn" text="Signal" press="onSignalPress" /> -->
+        <!-- <Panel headerText="Employee Details" expandable="true" expanded="true">
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" 
+            emptySpanL="6" emptySpanM="6" columnsL="1">
+            <core:Title text="Basic Info"></core:Title>
+                <Label text="Employee Id"/>
+                <Input ></Input>
+                <Label text="Name"/>
+                <Input ></Input>
+                <Label text="Designation"/>
+                <Input ></Input>
+
+                <core:Title text="More Info"></core:Title>
+                <Label text="Skill"/>
+                <Input ></Input>
+                <Label text="Email"/>
+                <Input ></Input>
+            </f:SimpleForm>
+        </Panel> -->
+
+        <!-- <l:Grid defaultSpan="L2 M2" vSpacing="0">
+            <l:content>
+                <Label text="Employee Id" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+                <Label text="Name" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+                <Label text="Designation" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+
+                
+                <Label text="Skill" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+                <Label text="Email" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+            </l:content>
+        </l:Grid> -->
+
+        <!-- <FlexBox justifyContent="Center" alignItems="Center" height="100%">
+            <Button text="Demo"></Button>
+            <Button text="Demo1" />
+        </FlexBox> -->
+        
+        <!-- <HBox>
+           <VBox >
+            <Label text="Employee Id" />
+            <Input ></Input>
+           </VBox>
+
+           <VBox >
+            <Label text="Name" />
+            <Input ></Input>
+           </VBox>
+
+           <VBox >
+            <Label text="Skill" />
+            <Input ></Input>
+           </VBox>
+        </HBox> -->
+
+        <!-- <ObjectHeader title="Priyanka" number="1200000" numberUnit="INR" backgroundDesign="Solid">
+            <attributes>
+                <ObjectAttribute title="Employee Id" text="1001"></ObjectAttribute>
+                <ObjectAttribute title="Designation" text="Senior Developer"></ObjectAttribute>
+            </attributes>
+
+            <statuses>
+                <ObjectStatus text="Available" state="Success" inverted="true"></ObjectStatus>
+            </statuses> 
+        </ObjectHeader>
+
+        <IconTabBar >
+        <items>
+            <IconTabFilter icon="sap-icon://information">
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" 
+            emptySpanL="6" emptySpanM="6" columnsL="1">
+            <core:Title text="Basic Info"></core:Title>
+                <Label text="Employee Id"/>
+                <Input ></Input>
+                <Label text="Name"/>
+                <Input ></Input>
+                <Label text="Designation"/>
+                <Input ></Input>
+
+                <core:Title text="More Info"></core:Title>
+                <Label text="Skill"/>
+                <Input ></Input>
+                <Label text="Email"/>
+                <Input ></Input>
+            </f:SimpleForm>
+            </IconTabFilter>
+            <IconTabFilter icon="sap-icon://notes">
+            <l:Grid defaultSpan="L2 M2" vSpacing="0">
+            <l:content>
+                <Label text="Employee Id" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+                <Label text="Name" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+                <Label text="Designation" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+
+                
+                <Label text="Skill" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+                <Label text="Email" class="sapUiTinyMarginTop"/>
+                <Input ></Input>
+            </l:content>
+        </l:Grid>
+            </IconTabFilter>
+            <IconTabFilter icon="sap-icon://attachment">
+            <HBox>
+           <VBox >
+            <Label text="Employee Id" />
+            <Input ></Input>
+           </VBox>
+
+           <VBox >
+            <Label text="Name" />
+            <Input ></Input>
+           </VBox>
+
+           <VBox >
+            <Label text="Skill" />
+            <Input ></Input>
+           </VBox>
+        </HBox>
+            </IconTabFilter>
+        </items>
+        </IconTabBar> -->
+
+        <!-- <l:Splitter >
+
+            
+            <Button text="I am at the Left">
+                <layoutData>
+                    <l:SplitterLayoutData size="20%"></l:SplitterLayoutData>
+                </layoutData>
+            </Button>
+            <Button text="I am at the Right">
+                <layoutData>
+                    <l:SplitterLayoutData size="80%"></l:SplitterLayoutData>
+                </layoutData>
+            </Button>
+        </l:Splitter> -->
+
+        <!-- <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" 
+        emptySpanL="6" emptySpanM="2">
+
+            <Label text="Employee Id" required="true"/>
+            <Input id="idIpt"/>
+            <Label text="Name" required="true"/>
+            <Input id="nameIpt"/>
+            <Label text="Designation" />
+            <Input />
+            <Label text="Skill" />
+            <Input />
+            <Label text="Email" required="true"/>
+            <Input id="emailIpt"/>
+        </f:SimpleForm> -->
+
+        <!-- <Table id="empTab" items="{oModel>/EmployeeSet}" mode="MultiSelect">
+            <headerToolbar>
+                <Toolbar >
+                    <Title text="Employee Details" textAlign="Center"/>
+                    <ToolbarSpacer ></ToolbarSpacer>
+                    <Button text="Selected Row" press="onButtonPress" type="Emphasized"></Button>
+                </Toolbar>
+            </headerToolbar>
+
+            <columns>
+                <Column >
+                    <Label text="Employee Id" />
+                </Column>
+                <Column >
+                    <Label text="Name" />
+                </Column>
+                <Column >
+                    <Label text="Designation" />
+                </Column>
+                <Column >
+                    <Label text="Skill" />
+                </Column>
+                <Column >
+                    <Label text="Status" />
+                </Column>
+                <Column >
+                    <Label text="Rating" />
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem type="Navigation" press="onRowSelect" >
+                    <Text text="{oModel>Empid}" />
+                    <Text text="{oModel>Name}" />
+                    <Text text="{path:'oModel>Desig',formatter:'.f.formatDesig'}" />
+                    <Text text="{oModel>Skill}" />
+                    <ObjectStatus text="{oModel>Status}" state="{path:'oModel>Status',formatter:'.f.formatStatus'}" inverted="true"></ObjectStatus>
+                    <Text text="{path:'oModel>Rating',formatter:'.f.formatRating'}" />
+                </ColumnListItem>
+            </items>
+        
+        </Table> -->
+
+        <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6">
+        <Label text="Select an Employee" />
+        <Input id="f4HelpIpt" showValueHelp="true" valueHelpRequest="onF4helpPress"></Input>
+        </f:SimpleForm>
+
+        <!--<Table items="{empModel>/results}">
+            <headerToolbar>
+                <Toolbar >
+                    <Title text="Employee List by reading into a json model" textAlign="Center"/>
+                </Toolbar>
+            </headerToolbar>
+
+            <columns>
+                <Column >
+                    <Label text="Employee Id" />
+                </Column>
+                <Column >
+                    <Label text="Name" />
+                </Column>
+                <Column >
+                    <Label text="Designation" />
+                </Column>
+                <Column >
+                    <Label text="Skill" />
+                </Column>
+                <Column >
+                    <Label text="Status" />
+                </Column>
+                <Column >
+                    <Label text="Rating" />
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem >
+                    <Text text="{empModel>Empid}" />
+                    <Text text="{empModel>Name}" />
+                    <Text text="{empModel>Desig}" />
+                    <Text text="{empModel>Skill}" />
+                    <Text text="{empModel>Status}" />
+                    <Text text="{empModel>Rating}" />
+                </ColumnListItem>
+            </items>
+        
+        </Table> -->
+
+        <!-- <List items="{oModel>/EmployeeSet}">
+        <items>
+            <ObjectListItem title="{oModel>Name}" number="{oModel>Salary}" numberUnit="INR" >
+                <attributes>
+                    <ObjectAttribute title="Employee Id" text="{oModel>Empid}"></ObjectAttribute>
+                    <ObjectAttribute title="Designation" text="{oModel>Desig}"></ObjectAttribute>
+                    <ObjectAttribute title="Skill" text="{oModel>Skill}"></ObjectAttribute>
+                </attributes>
+
+                <firstStatus>
+                    <ObjectStatus text="{oModel>Status}" state="{path:'oModel>Status', formatter:'.f.formatStatus'}"></ObjectStatus>
+                 </firstStatus>
+            </ObjectListItem>
+        </items>
+        </List> -->
+         
+        <!-- <f:SimpleForm title="MultiValue UI Elemements" editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6">
+            <f:content>
+            <Label text="I am Selectbox"></Label>
+            <Select id="oSelName" items="{oModel>/EmployeeSet}" change="onSelectChange">
+                <items>
+                    <core:Item text="{oModel>Name}" key="{oModel>Name}"></core:Item>
+                </items>
+            </Select>
+
+            <Label text="I am Combobox" />
+            <ComboBox id="oCBName" items="{oModel>/EmployeeSet}" selectionChange="onComboSelect">
+                <core:Item text="{oModel>Name}" key="{oModel>Name}"></core:Item>
+            </ComboBox>
+
+            <Label text="I am MultiCombobox" />
+            <MultiComboBox id="oMCBName" items="{oModel>/EmployeeSet}" showSelectAll="true" selectionFinish="onMultiSelect">
+                <core:Item text="{oModel>Name}" key="{oModel>Name}"></core:Item>
+            </MultiComboBox>
+
+            <Label text="I am RadioGroup"/>
+            <RadioButtonGroup id="oRadName" buttons="{oModel>/EmployeeSet}" columns="3" selectedIndex="-1" select="onRadioSelect">
+                <buttons>
+                    <RadioButton text="{oModel>Name}"></RadioButton>
+                </buttons>
+            </RadioButtonGroup>
+            </f:content>
+        </f:SimpleForm> -->
+
+        
+        </content>
+        <footer>
+            <Bar>
+            <contentRight>
+                <!-- <Button text="Submit" press="onSubmit" type="Emphasized" /> -->
+                <Button text="Submit" press="onMultiValueSubmit" />
+            </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

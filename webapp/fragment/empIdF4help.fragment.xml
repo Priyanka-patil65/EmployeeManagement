@@ -1,0 +1,48 @@
+<core:FragmentDefinition 
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+
+<Dialog title="Select an Employee">
+    <content>
+        <Table items="{oModel>/EmployeeSet}">
+            <columns>
+                <Column >
+                    <Label text="Employee Id" />
+                </Column>
+                <Column >
+                    <Label text="Name" />
+                </Column>
+                <Column >
+                    <Label text="Designation" />
+                </Column>
+                <Column >
+                    <Label text="Skill" />
+                </Column>
+                <Column >
+                    <Label text="Status" />
+                </Column>
+                <Column >
+                    <Label text="Rating" />
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem type="Active" press="onF4RowSelect">
+                    <Text text="{oModel>Empid}" />
+                    <Text text="{oModel>Name}" />
+                    <Text text="{path:'oModel>Desig',formatter:'.f.formatDesig'}" />
+                    <Text text="{oModel>Skill}" />
+                    <!-- <ObjectStatus text="{oModel>Status}" state="{=${oModel>Status}==='PERMANENT'?'Success':'Error'}" inverted="true"></ObjectStatus> -->
+                    <ObjectStatus text="{oModel>Status}" state="{path:'oModel>Status',formatter:'.f.formatStatus'}" inverted="true"></ObjectStatus>
+                    <Text text="{path:'oModel>Rating',formatter:'.f.formatRating'}" />
+                </ColumnListItem>
+            </items>
+        
+        </Table>
+    </content>
+
+    <endButton>
+        <Button text="Close" press="onClose" type="Reject"></Button>
+    </endButton>
+</Dialog>
+</core:FragmentDefinition>

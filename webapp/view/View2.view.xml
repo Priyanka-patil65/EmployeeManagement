@@ -1,0 +1,6 @@
+<mvc:View controllerName="com.demo.demoempmanagement.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page2" title="I am View2">
+    </Page>
+</mvc:View>
