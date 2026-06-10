@@ -177,12 +177,27 @@
             <Input id="emailIpt"/>
         </f:SimpleForm> -->
 
-        <!-- <Table id="empTab" items="{oModel>/EmployeeSet}" mode="MultiSelect">
+        <!-- -->
+
+        <Panel headerText="Filter/Sort Employees" expanded="true" expandable="true">
+            <content>
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6">
+            <core:Title text="Filters"> </core:Title>
+            <Label text="Select an Employee" />
+            <Input id="f4HelpIpt" showValueHelp="true" valueHelpRequest="onF4helpPress"></Input>
+            </f:SimpleForm>
+
+            <FlexBox justifyContent="End">
+                <Button text="Go" icon="sap-icon://accept" type="Emphasized" class="sapUiTinyMarginEnd" press="onGoPress"/>
+                <Button text="Reset" type="Reject" icon="sap-icon://reset"/>
+            </FlexBox>
+        </content>
+        </Panel>
+
+        <Table id="empTab" items="{oModel>/EmployeeSet}" mode="SingleSelectLeft">
             <headerToolbar>
                 <Toolbar >
-                    <Title text="Employee Details" textAlign="Center"/>
-                    <ToolbarSpacer ></ToolbarSpacer>
-                    <Button text="Selected Row" press="onButtonPress" type="Emphasized"></Button>
+                    <Title text="Employee Details" textAlign="Center"/>    
                 </Toolbar>
             </headerToolbar>
 
@@ -218,12 +233,7 @@
                 </ColumnListItem>
             </items>
         
-        </Table> -->
-
-        <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6">
-        <Label text="Select an Employee" />
-        <Input id="f4HelpIpt" showValueHelp="true" valueHelpRequest="onF4helpPress"></Input>
-        </f:SimpleForm>
+        </Table> 
 
         <!--<Table items="{empModel>/results}">
             <headerToolbar>

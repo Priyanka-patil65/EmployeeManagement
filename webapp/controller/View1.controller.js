@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageBox",
-    "com/demo/demoempmanagement/model/formatter"
-], (Controller,MessageBox,formatter) => {
+    "com/demo/demoempmanagement/model/formatter",
+    "sap/ui/model/Filter"
+], (Controller,MessageBox,formatter,Filter) => {
     "use strict";
 
     return Controller.extend("com.demo.demoempmanagement.controller.View1", {
@@ -173,6 +174,16 @@ sap.ui.define([
         },
         onClose:function(){
             this.dialog.close();
+        },
+
+        onGoPress: function(){
+            var empId = this.byId("f4HelpIpt").getValue();
+            var aFilter = [];
+            if(empId !== ""){
+                aFilter.push(new Filter("Empid","EQ",empId));
+            }
+            this.byId("empTab").getBinding("items").filter(aFilter);
+
         }
 
     });
