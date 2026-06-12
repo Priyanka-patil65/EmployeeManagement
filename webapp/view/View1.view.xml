@@ -3,7 +3,7 @@
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout">
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="{i18n>title}" class="sapUiSmallMarginBegin sapUiSmallMarginEnd">
         <content>
             <!-- <Text id="welcomeTxt" text="Welcome to SAPUI5" width="100%" textAlign="Center" class="sapMH1FontSize"/>
             
@@ -181,15 +181,53 @@
 
         <Panel headerText="Filter/Sort Employees" expanded="true" expandable="true">
             <content>
-            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6">
+            <f:SimpleForm editable="true" columnsL="3" columnsM="3" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0">
             <core:Title text="Filters"> </core:Title>
-            <Label text="Select an Employee" />
+            <Label text="Employee Id" />
             <Input id="f4HelpIpt" showValueHelp="true" valueHelpRequest="onF4helpPress"></Input>
+            <Label text="Name"/>
+            <Input id="nameIpt"/>
+            <Label text="Skill" />
+            <Input id="skillIpt" />
+            <Label text="Desig" />
+            <Input id="desigIpt" />
+
+            <core:Title text="Sorting" />
+            <Label text="Sorting Field" />
+            <ComboBox id="sortCmb">
+                <items>
+                    <core:Item text="Name" key="Name"></core:Item>
+                    <core:Item text="EmpId" key="Empid"></core:Item>
+                    <core:Item text="Skill" key="Skill"></core:Item>
+                    <core:Item text="Designation" key="Desig"></core:Item>
+                </items>
+            </ComboBox>
+
+            <Label text="Sorting Order" />
+            <RadioButtonGroup columns="2" id="orderRBG" selectedIndex="-1">
+            <RadioButton text="Ascending"></RadioButton>
+            <RadioButton text="Descending"></RadioButton>
+            </RadioButtonGroup>
+
+            <core:Title text="Grouping" />
+            <Label text="Grouping Field" />
+            <ComboBox id="groupCmb">
+                <items>
+                    <core:Item text="Skill" key="Skill"></core:Item>
+                    <core:Item text="Designation" key="Desig"></core:Item>
+                </items>
+            </ComboBox>
+
+            <Label text="Grouping Order" />
+            <RadioButtonGroup columns="2" id="groupRBG" selectedIndex="-1">
+            <RadioButton text="Ascending"></RadioButton>
+            <RadioButton text="Descending"></RadioButton>
+            </RadioButtonGroup>
             </f:SimpleForm>
 
             <FlexBox justifyContent="End">
                 <Button text="Go" icon="sap-icon://accept" type="Emphasized" class="sapUiTinyMarginEnd" press="onGoPress"/>
-                <Button text="Reset" type="Reject" icon="sap-icon://reset"/>
+                <Button text="Reset" type="Reject" icon="sap-icon://reset" press="onResetPress"/>
             </FlexBox>
         </content>
         </Panel>

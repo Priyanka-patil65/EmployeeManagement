@@ -2,8 +2,9 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageBox",
     "com/demo/demoempmanagement/model/formatter",
-    "sap/ui/model/Filter"
-], (Controller,MessageBox,formatter,Filter) => {
+    "sap/ui/model/Filter",
+    "sap/ui/model/Sorter"
+], (Controller,MessageBox,formatter,Filter,Sorter) => {
     "use strict";
 
     return Controller.extend("com.demo.demoempmanagement.controller.View1", {
@@ -178,11 +179,68 @@ sap.ui.define([
 
         onGoPress: function(){
             var empId = this.byId("f4HelpIpt").getValue();
+            var name = this.byId("nameIpt").getValue();
+            var skill = this.byId("skillIpt").getValue();
+            var desig = this.byId("desigIpt").getValue();
+            var sortField = this.byId("sortCmb").getSelectedKey();
+            var sortOrder = this.byId("orderRBG").getSelectedIndex();
+            var groupField = this.byId("groupCmb").getSelectedKey();
+            var groupOrder = this.byId("groupRBG").getSelectedIndex();
             var aFilter = [];
+            var aSorter = [];
             if(empId !== ""){
                 aFilter.push(new Filter("Empid","EQ",empId));
             }
+            if(name){
+                aFilter.push(new Filter("Name","Contains",name))
+            }
+            if(skill){
+                aFilter.push(new Filter("Skill", "Contains",skill))
+            }
+            if(desig){
+                aFilter.push(new Filter("Desig","Contains",desig))
+            }
             this.byId("empTab").getBinding("items").filter(aFilter);
+
+             if(groupField !== "" && groupOrder !== -1){
+                aSorter.push(new Sorter(groupField,(groupOrder===0)?false:true,function(oBindingContext){
+                      if(groupField === "Skill"){
+                        var skill = oBindingContext.getObject().Skill;
+                        return{
+                            key:skill,
+                            text:skill
+                        }
+                      }
+                      else if(groupField === "Desig"){
+                        var desig = oBindingContext.getObject().Desig;
+                        return{
+                            key:desig,
+                            text:desig
+                        }
+                      }
+
+                }));
+            }
+
+
+            if(sortField !== "" && sortOrder !== -1){
+                aSorter.push(new Sorter(sortField,(sortOrder===0)?false:true));
+            }
+            this.byId("empTab").getBinding("items").sort(aSorter);
+        },
+
+        onResetPress:function(){
+            this.byId("f4HelpIpt").setValue("");
+            this.byId("nameIpt").setValue("");
+            this.byId("skillIpt").setValue("");
+            this.byId("desigIpt").setValue("");
+            this.byId("sortCmb").setSelectedKey("");
+            this.byId("orderRBG").setSelectedIndex(-1);
+            this.byId("groupCmb").setSelectedKey("");
+            this.byId("groupRBG").setSelectedIndex(-1);
+
+            this.byId("empTab").getBinding("items").filter([]);
+            this.byId("empTab").getBinding("items").sort([]);
 
         }
 
