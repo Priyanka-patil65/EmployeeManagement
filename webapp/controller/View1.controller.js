@@ -150,6 +150,9 @@ sap.ui.define([
 
         onRowSelect: function(oEvent){
             var empId = oEvent.getSource().getBindingContext("oModel").getProperty("Empid");
+            this.getOwnerComponent().getRouter().navTo("RouteView2",{
+                key: empId
+            })
         },
         onButtonPress:function(){
             //single row selection

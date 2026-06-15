@@ -1,6 +1,15 @@
 <mvc:View controllerName="com.demo.demoempmanagement.controller.View2"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m" xmlns:f="sap.ui.layout.form">
     <Page id="page2" title="I am View2">
+
+        <f:SimpleForm id="oSFEmpDetails" editable="false">
+            <Label text="Employee Id" />
+            <Text text="{oModel>Empid}"></Text>
+            <Label text="Name" />
+            <Text text="{oModel>Name}"></Text>
+            <Label text="Designation" />
+            <Text text="{oModel>Desig}"></Text>
+        </f:SimpleForm>
     </Page>
 </mvc:View>

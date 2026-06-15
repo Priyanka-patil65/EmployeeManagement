@@ -179,7 +179,7 @@
 
         <!-- -->
 
-        <Panel headerText="Filter/Sort Employees" expanded="true" expandable="true">
+        <Panel headerText="Filter/Sort Employees" expanded="false" expandable="true">
             <content>
             <f:SimpleForm editable="true" columnsL="3" columnsM="3" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0">
             <core:Title text="Filters"> </core:Title>
@@ -272,6 +272,8 @@
             </items>
         
         </Table> 
+
+        
 
         <!--<Table items="{empModel>/results}">
             <headerToolbar>
