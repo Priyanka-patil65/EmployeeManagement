@@ -1,15 +1,37 @@
-<mvc:View controllerName="com.demo.demoempmanagement.controller.View2"
+<mvc:View
+    controllerName="com.demo.demoempmanagement.controller.View2"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m" xmlns:f="sap.ui.layout.form">
-    <Page id="page2" title="I am View2">
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page2" title="I am View2" showNavButton="true" navButtonPress="onBackPress">
 
-        <f:SimpleForm id="oSFEmpDetails" editable="false">
-            <Label text="Employee Id" />
-            <Text text="{oModel>Empid}"></Text>
-            <Label text="Name" />
-            <Text text="{oModel>Name}"></Text>
-            <Label text="Designation" />
-            <Text text="{oModel>Desig}"></Text>
-        </f:SimpleForm>
+    <content>
+        <ObjectHeader title="{oModel>Name}" number="{oModel>Salary}" numberUnit="INR">
+            <attributes>
+                <ObjectAttribute title="Employee Id" text="{oModel>Empid}"></ObjectAttribute>
+                <ObjectAttribute title="Designation" text="{oModel>Desig}"></ObjectAttribute>
+            </attributes>
+
+            <statuses>
+                <ObjectStatus text="{oModel>Status}" state="{path:'oModel>Status',formatter:'.f.formatStatus'}" inverted="true"></ObjectStatus>
+            </statuses>
+        </ObjectHeader>
+
+
+        <IconTabBar>
+            <items>
+                <IconTabFilter icon="sap-icon://information">
+                    <f:SimpleForm id="oSFEmpDetails" editable="false">
+                        <Label text="Employee Id" />
+                        <Text text="{oModel>Empid}" />
+                        <Label text="Name" />
+                        <Text text="{oModel>Name}" />
+                        <Label text="Designation" />
+                        <Text text="{oModel>Desig}" />
+                    </f:SimpleForm>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+    </content>
     </Page>
 </mvc:View>

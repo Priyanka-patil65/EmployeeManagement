@@ -229,7 +229,7 @@ sap.ui.define([
             if(sortField !== "" && sortOrder !== -1){
                 aSorter.push(new Sorter(sortField,(sortOrder===0)?false:true));
             }
-            this.byId("empTab").getBinding("items").sort(aSorter);
+            this.byId("empTab").getBinding("items").sort(aSorter); //this will form ?$orderby=FieldName sortOrder
         },
 
         onResetPress:function(){
@@ -245,7 +245,11 @@ sap.ui.define([
             this.byId("empTab").getBinding("items").filter([]);
             this.byId("empTab").getBinding("items").sort([]);
 
+        },
+        onAddEmpPress:function(){
+            this.getOwnerComponent().getRouter().navTo("RouteView3")
         }
+
 
     });
 });

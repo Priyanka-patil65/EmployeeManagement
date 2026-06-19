@@ -235,8 +235,13 @@
         <Table id="empTab" items="{oModel>/EmployeeSet}" mode="SingleSelectLeft">
             <headerToolbar>
                 <Toolbar >
-                    <Title text="Employee Details" textAlign="Center"/>    
+                    <Title text="Employee Details" textAlign="Center"/> 
+                    <ToolbarSpacer ></ToolbarSpacer>
+                    <Button text="Add Employee" icon="sap-icon://add" press="onAddEmpPress" type="Emphasized" />
+
                 </Toolbar>
+            
+                
             </headerToolbar>
 
             <columns>
