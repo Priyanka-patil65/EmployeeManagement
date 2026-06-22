@@ -238,6 +238,8 @@
                     <Title text="Employee Details" textAlign="Center"/> 
                     <ToolbarSpacer ></ToolbarSpacer>
                     <Button text="Add Employee" icon="sap-icon://add" press="onAddEmpPress" type="Emphasized" />
+                    <Button text="Update Employee" icon="sap-icon://edit" press="onUpdatePress" type="Emphasized" />
+                    <Button text="Delete Employee" icon="sap-icon://delete" press="onDeletePress" type="Emphasized" />
 
                 </Toolbar>
             

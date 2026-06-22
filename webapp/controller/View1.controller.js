@@ -248,6 +248,38 @@ sap.ui.define([
         },
         onAddEmpPress:function(){
             this.getOwnerComponent().getRouter().navTo("RouteView3")
+        },
+
+        onUpdatePress:function(){
+            var selRow = this.byId("empTab").getSelectedItem();
+            if(selRow === null){
+                MessageBox.success("Please select a Row");
+                return;
+            }
+
+            var empId = selRow.getBindingContext("oModel").getProperty("Empid")
+            this.getOwnerComponent().getRouter().navTo("RouteView4",{
+                key: empId
+            })
+        },
+        onDeletePress : function(){
+            var selRow = this.byId("empTab").getSelectedItem();
+            if(selRow === null){
+                MessageBox.warning("Please select and row");
+                return;
+            }
+
+            var empId = selRow.getBindingContext("oModel").getProperty("Empid");
+            var oModel = this.getOwnerComponent().getModel("oModel");
+            oModel.remove("/EmployeeSet('"+empId+"')",{
+                success(req,res){
+                    MessageBox.success("Data Deleted successfully");
+                },
+                error(oError){
+                    MessageBox.error(JSON.parse(oError.responseText).error.message.value);
+                }
+            })
+
         }
 
 

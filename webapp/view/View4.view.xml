@@ -1,0 +1,38 @@
+<mvc:View
+    controllerName="com.demo.demoempmanagement.controller.View4"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page4" title="I am View4" showNavButton="true" navButtonPress="onBackPress">
+    <content>
+        <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6" >
+        <Label text="Employee Id"></Label>
+        <Input id="oIpEmpIdV4" value="{oModel>Empid}" enabled="false"></Input>
+        <Label text="Name"></Label>
+        <Input id="oIpEmpNameV4" value="{oModel>Name}"></Input>
+        <Label text="Designation"></Label>
+        <Input id="oIpEmpDesigV4" value="{oModel>Desig}"></Input>
+        <Label text="Skill"></Label>
+        <Input id="oIpEmpSkillV4" value="{oModel>Skill}"></Input>
+        <Label text="Email"></Label>
+        <Input id="oIpEmpEmailV4" value="{oModel>Email}"></Input>
+        <Label text="Salary"></Label>
+        <Input id="oIpEmpSalaryV4" value="{oModel>Salary}"></Input>
+        <Label text="Status"></Label>
+        <Input id="oIpEmpStatusV4" value="{oModel>Status}"></Input>
+        <Label text="Rating"></Label>
+        <Input id="oIpEmpRatingV4" value="{oModel>Rating}"></Input>
+        </f:SimpleForm>
+
+    </content>
+
+    <footer>
+        <Bar >
+            <contentRight>
+                <Button text="Save" press="onSavePress" type="Emphasized"></Button>
+            </contentRight>
+        </Bar>
+    </footer>
+    </Page>
+
+</mvc:View>
