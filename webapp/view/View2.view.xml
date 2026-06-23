@@ -28,7 +28,47 @@
                         <Text text="{oModel>Name}" />
                         <Label text="Designation" />
                         <Text text="{oModel>Desig}" />
+                        <Label text="Email" />
+                        <Text text="{oModel>Email}" />
+                        <Label text="Status" />
+                        <ObjectStatus text="{oModel>Status}" state="{path:'oModel>Status',formatter:'.f.formatStatus'}"></ObjectStatus>
+                        <Label text="Rating" />
+                        <Text text="{path:'oModel>Rating',formatter:'.f.formatRating'}" />
                     </f:SimpleForm>
+                </IconTabFilter>
+
+                <IconTabFilter icon="sap-icon://validate">
+                    <Table items="{oModel>toCertification}">
+                        <columns>
+                            <Column >
+                                <Label text="Employee Id"></Label>
+                            </Column>
+                            <Column >
+                                <Label text="Certification Id"></Label>
+                            </Column>
+                            <Column >
+                                <Label text="Certification name"></Label>
+                            </Column>
+                            <Column >
+                                <Label text="Description"></Label>
+                            </Column>
+                            <Column >
+                                <Label text="Status"></Label>
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem >
+                                <Text text="{oModel>Empid}"></Text>
+                                <Text text="{oModel>Certid}"></Text>
+                                <Text text="{oModel>Certname}"></Text>
+                                <Text text="{oModel>Description}"></Text>
+                                <Text text="{oModel>Status}"></Text>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+
+                
                 </IconTabFilter>
             </items>
         </IconTabBar>

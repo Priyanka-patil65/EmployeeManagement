@@ -11,7 +11,10 @@ sap.ui.define([
         },
         onPatternMatached:function(oEvent){
             var empId = oEvent.getParameter("arguments").key;
-            this.getView().bindElement("oModel>/EmployeeSet('"+ empId + "')");
+                this.getView().bindElement("oModel>/EmployeeSet('"+ empId + "')");
+
+                // this.getView().bindElement("oModel>/CertificationSet('"+ empId + "')");
+            
 
         },
 
