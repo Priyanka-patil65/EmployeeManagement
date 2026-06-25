@@ -70,6 +70,9 @@
       },
       "empModel":{
         "type":"sap.ui.model.json.JSONModel"
+      },
+      "certModel":{
+        "type":"sap.ui.model.json.JSONModel"
       }
     },
     "resources": {

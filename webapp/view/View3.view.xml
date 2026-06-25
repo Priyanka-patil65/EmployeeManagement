@@ -12,8 +12,6 @@
         <Input id="oIpEmpName"></Input>
         <Label text="Designation"></Label>
         <Input id="oIpEmpDesig"></Input>
-        <Label text="Skill"></Label>
-        <Input id="oIpEmpSkill"></Input>
         <Label text="Email"></Label>
         <Input id="oIpEmpEmail"></Input>
         <Label text="Salary"></Label>
@@ -23,7 +21,49 @@
         <Label text="Rating"></Label>
         <Input id="oIpEmpRating"></Input>
         </f:SimpleForm>
+        
+        <Table class="sapUiSmallMargin" width="auto" items="{certModel>/aCertifications}">
+            <headerToolbar> 
+                <Toolbar>
+                    <Title text="Certification Details"></Title>
+                    <ToolbarSpacer ></ToolbarSpacer>
+                    <Button icon="sap-icon://add" type="Emphasized" press="onAddPress"></Button>
+                </Toolbar>
+            </headerToolbar>
 
+            <columns>
+                <Column >
+                    <Label text="Employee Id"></Label>
+                </Column>
+                 <Column >
+                    <Label text="Certification Id"></Label>
+                </Column>
+                <Column >
+                    <Label text="Certification name"></Label>
+                </Column>
+                <Column >
+                    <Label text="Description"></Label>
+                </Column>
+                <Column >
+                    <Label text="Status"></Label>
+                </Column>
+                <Column >
+                    <Label text="Delete"></Label>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem >
+                    <Input value="{certModel>Empid}" enabled="false"></Input>
+                    <Input value="{certModel>Certid}"></Input>
+                    <Input value="{certModel>Certname}"></Input>
+                    <Input value="{certModel>Description}"></Input>
+                    <Input value="{certModel>Status}"></Input>
+                    <Button icon="sap-icon://delete" type="Reject" press="onRemovePress"></Button>
+                </ColumnListItem>
+            </items>
+            
+        </Table>
     </content>
 
     <footer>

@@ -6,6 +6,34 @@ sap.ui.define([
 
     return Controller.extend("com.demo.demoempmanagement.controller.View3", {
         onInit() {
+            this.certModel = this.getOwnerComponent().getModel("certModel");
+            this.certModel.setData({
+                aCertifications : [
+                    // {
+                    //     Empid:"E1001",
+                    //     Certid:"C1001",
+                    //     Certname:"AWS",
+                    //     Description:"AWS Cloud Practitioner",
+                    //     Status:"Active"
+                    // }
+                ]
+        })
+        },
+        onAddPress:function(){
+            this.certModel.getData().aCertifications.push({
+                Empid: this.byId("oIpEmpId").getValue(),
+                Certid:"",
+                Certname:"",
+                Description:"",
+                Status:""
+            })
+            this.certModel.refresh();
+
+        },
+        onRemovePress:function(oEvent){
+            var index=oEvent.getSource().getParent().getBindingContextPath().split("/")[2];
+            this.certModel.getData().aCertifications.splice(index, 1);
+            this.certModel.refresh();
         },
         onBackPress:function(){
             this.getOwnerComponent().getRouter().navTo("RouteView1")
@@ -15,7 +43,6 @@ sap.ui.define([
             var empId= this.byId("oIpEmpId").getValue();
             var empName= this.byId("oIpEmpName").getValue();
             var empDesig= this.byId("oIpEmpDesig").getValue();
-            var empSkill= this.byId("oIpEmpSkill").getValue();
             var empEmail= this.byId("oIpEmpEmail").getValue();
             var empSalary= this.byId("oIpEmpSalary").getValue();
             var empStatus= this.byId("oIpEmpStatus").getValue();
@@ -25,11 +52,11 @@ sap.ui.define([
                     Empid : empId,
                     Name : empName,
                     Desig : empDesig,
-                    Skill : empSkill,
                     Email : empEmail,
                     Salary : empSalary,
                     Status : empStatus,
-                    Rating : parseInt(empRating)
+                    Rating : parseInt(empRating),
+                    toCertification: this.certModel.getData().aCertifications
                 }
             
             var oModel = this.getOwnerComponent().getModel("oModel");

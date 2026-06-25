@@ -3,7 +3,7 @@
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout">
-    <Page id="page" title="{i18n>title}" class="sapUiSmallMarginBegin sapUiSmallMarginEnd">
+    <Page id="page" title="{i18n>title}">
         <content>
             <!-- <Text id="welcomeTxt" text="Welcome to SAPUI5" width="100%" textAlign="Center" class="sapMH1FontSize"/>
             
@@ -232,7 +232,7 @@
         </content>
         </Panel>
 
-        <Table id="empTab" items="{oModel>/EmployeeSet}" mode="SingleSelectLeft">
+        <Table id="empTab" items="{oModel>/EmployeeSet}" mode="SingleSelectLeft" class="sapUiSmallMargin" width="auto">
             <headerToolbar>
                 <Toolbar >
                     <Title text="Employee Details" textAlign="Center"/> 
