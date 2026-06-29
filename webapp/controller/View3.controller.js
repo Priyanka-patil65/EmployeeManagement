@@ -1,7 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageBox"
-], (Controller,MessageBox) => {
+    "sap/m/MessageBox",
+    "sap/m/MessageToast",
+    "sap/ui/unified/FileUploaderParameter",
+], (Controller,MessageBox,MessageToast,FileUploaderParameter) => {
     "use strict";
 
     return Controller.extend("com.demo.demoempmanagement.controller.View3", {
@@ -39,6 +41,40 @@ sap.ui.define([
             this.getOwnerComponent().getRouter().navTo("RouteView1")
         },
 
+        uploadPhoto:function(){
+            var fileUploader = this.byId("oFileUpoaderPhoto");
+            var Empid=this.byId("oIpEmpId").getValue();
+            var slug = Empid + ","+ this.fileName;
+
+            fileUploader.addHeaderParameter(new FileUploaderParameter({
+                name:"slug",
+                value:slug
+
+            }));
+
+            fileUploader.addHeaderParameter(new FileUploaderParameter({
+                name:"fileType",
+                value:this.fileType
+            }));
+
+            this.getOwnerComponent().getModel("oModel").refreshSecurityToken();
+                fileUploader.addHeaderParameter(new FileUploaderParameter({
+                    name: "x-csrf-token",
+                    value: this.getOwnerComponent().getModel("oModel").getHeaders()["x-csrf-token"]
+                }));
+                fileUploader.upload();
+
+        },
+        OnFileUpload: function(oEvent){
+            var status = oEvent.getParameter("status");
+            if(status===201){
+                MessageToast.show("File uploaded successfully");
+            }
+            else{
+                MessageToast.show("Photo upload failed with status: " + status)
+            }
+        },
+
         onSavePress: function(){
             var empId= this.byId("oIpEmpId").getValue();
             var empName= this.byId("oIpEmpName").getValue();
@@ -64,11 +100,17 @@ sap.ui.define([
 
                 success: function(req,res){
                     MessageBox.success("Data added successfully");
-                },
+                    this.uploadPhoto();
+                }.bind(this),
                 error: function(oError){
                     // MessageBox.error(JSON.parse(oError.responseText).error.message.value);
                 }
             }) // this will trigger a POST call to the backend
+        },
+
+        onSelcFile:function(oEvent){
+            this.fileName = oEvent.getParameter("files")[0].name;
+            this.fileType = oEvent.getParameter("files")[0].type;
         }
     });
 });
