@@ -12,8 +12,6 @@
         <Input id="oIpEmpNameV4" value="{oModel>Name}"></Input>
         <Label text="Designation"></Label>
         <Input id="oIpEmpDesigV4" value="{oModel>Desig}"></Input>
-        <Label text="Skill"></Label>
-        <Input id="oIpEmpSkillV4" value="{oModel>Skill}"></Input>
         <Label text="Email"></Label>
         <Input id="oIpEmpEmailV4" value="{oModel>Email}"></Input>
         <Label text="Salary"></Label>
@@ -23,6 +21,49 @@
         <Label text="Rating"></Label>
         <Input id="oIpEmpRatingV4" value="{oModel>Rating}"></Input>
         </f:SimpleForm>
+
+        <Table class="sapUiSmallMargin" width="auto" items="{certUpdateModel>/results}">
+            <headerToolbar> 
+                <Toolbar>
+                    <Title text="Certification Details"></Title>
+                    <ToolbarSpacer ></ToolbarSpacer>
+                    <Button icon="sap-icon://add" type="Emphasized" press="onAddPress"></Button>
+                </Toolbar>
+            </headerToolbar>
+
+            <columns>
+                <Column >
+                    <Label text="Employee Id"></Label>
+                </Column>
+                 <Column >
+                    <Label text="Certification Id"></Label>
+                </Column>
+                <Column >
+                    <Label text="Certification name"></Label>
+                </Column>
+                <Column >
+                    <Label text="Description"></Label>
+                </Column>
+                <Column >
+                    <Label text="Status"></Label>
+                </Column>
+                <Column >
+                    <Label text="Delete"></Label>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem >
+                    <Input value="{certUpdateModel>Empid}" enabled="false"></Input>
+                    <Input value="{certUpdateModel>Certid}"></Input>
+                    <Input value="{certUpdateModel>Certname}"></Input>
+                    <Input value="{certUpdateModel>Description}"></Input>
+                    <Input value="{certUpdateModel>Status}"></Input>
+                    <Button icon="sap-icon://delete" type="Reject" press="onRemovePress"></Button>
+                </ColumnListItem>
+            </items>
+
+            </Table>
 
     </content>
 

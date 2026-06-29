@@ -73,6 +73,9 @@
       },
       "certModel":{
         "type":"sap.ui.model.json.JSONModel"
+      },
+      "certUpdateModel":{
+        "type":"sap.ui.model.json.JSONModel"
       }
     },
     "resources": {

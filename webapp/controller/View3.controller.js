@@ -66,7 +66,7 @@ sap.ui.define([
                     MessageBox.success("Data added successfully");
                 },
                 error: function(oError){
-                    MessageBox.error(JSON.parse(oError.responseText).error.message.value);
+                    // MessageBox.error(JSON.parse(oError.responseText).error.message.value);
                 }
             }) // this will trigger a POST call to the backend
         }
