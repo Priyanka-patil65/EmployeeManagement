@@ -105,6 +105,7 @@ sap.ui.define([
                 success: function(req,res){
                     MessageBox.success("Data added successfully");
                     this.uploadPhoto();
+                    this.uploaddocs();
                 }.bind(this),
                 error: function(oError){
                     // MessageBox.error(JSON.parse(oError.responseText).error.message.value);
@@ -112,6 +113,37 @@ sap.ui.define([
             }) // this will trigger a POST call to the backend
         },
 
-       
+       uploaddocs:function(oEvent){
+        var empId = this.byId("oIpEmpId").getValue();
+        var oMultiFileUploader = this.byId("oUploadDocs")
+        var aUploadFiles = oMultiFileUploader.getIncompleteItems();
+
+        for(var i=0;i<aUploadFiles.length;i++){
+            var fileName = aUploadFiles[i].getFileName();
+
+            var slug  = empId + "," + fileName;
+
+           oMultiFileUploader.addHeaderField(new sap.ui.core.Item({
+                    key: "SLUG",
+                    text: slug
+                }));
+
+                this.getOwnerComponent().getModel("oModel").refreshSecurityToken();
+                oMultiFileUploader.addHeaderField(new sap.ui.core.Item({
+                    key: "x-csrf-token",
+                    text: this.getOwnerComponent().getModel("oModel").getSecurityToken()
+                }));
+                oMultiFileUploader.uploadItem(aUploadFiles[i]);
+                oMultiFileUploader.removeAllHeaderFields();
+        }
+       },
+       onMultiDocsUpload:function(oEvent){
+        var status = oEvent.getParameter("status")
+        if(status===201){
+            MessageBox.success("Documents Uploaded Successfully");
+            }else{
+                MessageBox.error("Documents Upload Failed");
+            }
+       }
     });
 });

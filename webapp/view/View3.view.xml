@@ -3,7 +3,8 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form"
-    xmlns:u="sap.ui.unified">
+    xmlns:u="sap.ui.unified"
+    xmlns:up="sap.m.upload">
     <Page id="page3" title="I am View3" showNavButton="true" navButtonPress="onBackPress">
     <content>
         <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6" >
@@ -68,6 +69,13 @@
             </items>
             
         </Table>
+
+        <Panel headerText="Upload Documents">
+        <up:UploadSet id="oUploadDocs" uploadUrl="/sap/opu/odata/sap/ZEMP_DEMO_SRV/DocsSet" instantUpload="false" multiple="true" uploadCompleted="onMultiDocsUpload">
+        </up:UploadSet>
+         </Panel>
+
+        
     </content>
 
     <footer>
