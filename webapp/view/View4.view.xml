@@ -2,7 +2,8 @@
     controllerName="com.demo.demoempmanagement.controller.View4"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:f="sap.ui.layout.form">
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified">
     <Page id="page4" title="I am View4" showNavButton="true" navButtonPress="onBackPress">
     <content>
         <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6" >
@@ -20,6 +21,9 @@
         <Input id="oIpEmpStatusV4" value="{oModel>Status}"></Input>
         <Label text="Rating"></Label>
         <Input id="oIpEmpRatingV4" value="{oModel>Rating}"></Input>
+        <Label text="Upload your new photo"/>
+        <u:FileUploader id="oFileUpoaderPhoto1" uploadUrl="/sap/opu/odata/sap/ZEMP_DEMO_SRV/PhotoSet" sendXHR="true" useMultipart="false"  buttonText="Upload Photo"
+        change="onSelcFile" uploadComplete="OnFileUpload"></u:FileUploader>
         </f:SimpleForm>
 
         <Table class="sapUiSmallMargin" width="auto" items="{certUpdateModel>/results}">

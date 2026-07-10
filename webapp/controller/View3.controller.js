@@ -40,6 +40,10 @@ sap.ui.define([
         onBackPress:function(){
             this.getOwnerComponent().getRouter().navTo("RouteView1")
         },
+         onSelcFile:function(oEvent){
+            this.fileName = oEvent.getParameter("files")[0].name;
+            this.fileType = oEvent.getParameter("files")[0].type;
+        },
 
         uploadPhoto:function(){
             var fileUploader = this.byId("oFileUpoaderPhoto");
@@ -108,9 +112,6 @@ sap.ui.define([
             }) // this will trigger a POST call to the backend
         },
 
-        onSelcFile:function(oEvent){
-            this.fileName = oEvent.getParameter("files")[0].name;
-            this.fileType = oEvent.getParameter("files")[0].type;
-        }
+       
     });
 });

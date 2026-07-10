@@ -10,12 +10,16 @@ sap.ui.define([
             this.getOwnerComponent().getRouter().getRoute("RouteView2").attachPatternMatched(this.onPatternMatached,this)
         },
         onPatternMatached:function(oEvent){
-            var empId = oEvent.getParameter("arguments").key;
-                this.getView().bindElement("oModel>/EmployeeSet('"+ empId + "')");
+            this.empId = oEvent.getParameter("arguments").key;
+                this.getView().bindElement("oModel>/EmployeeSet('"+ this.empId + "')");
         },
 
         onBackPress:function(){
             this.getOwnerComponent().getRouter().navTo("RouteView1");
+        },
+        onIconPress:function(){
+            var url = "/sap/opu/odata/sap/ZEMP_DEMO_SRV/PhotoSet('" + this.empId + "')/$value"
+            sap.m.URLHelper.redirect(url,false);
         }
     });
 });

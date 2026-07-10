@@ -193,7 +193,7 @@
             <Input id="desigIpt" />
 
             <core:Title text="Sorting" />
-            <Label text="Sorting Field" />
+            <Label text="Sorting Field" />    
             <ComboBox id="sortCmb">
                 <items>
                     <core:Item text="Name" key="Name"></core:Item>

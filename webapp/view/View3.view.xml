@@ -22,7 +22,7 @@
         <Label text="Rating"></Label>
         <Input id="oIpEmpRating"></Input>
         <Label text="Upload your photo"/>
-        <u:FileUploader id="oFileUpoaderPhoto" uploadUrl="/sap/opu/odata/sap/ZEMP_DEMO_SRV/PhotoSet" sendXHR="true" useMultipart="false" 
+        <u:FileUploader id="oFileUpoaderPhoto" uploadUrl="/sap/opu/odata/sap/ZEMP_DEMO_SRV/PhotoSet" sendXHR="true" useMultipart="false"  buttonText="Upload Photo"
         change="onSelcFile" uploadComplete="OnFileUpload"></u:FileUploader>
         </f:SimpleForm>
         
